@@ -7,11 +7,12 @@
         "description": "export action"
     },
     "createNewAction": {
-        "prefix": "raction",
+        "prefix": "reaction",
         "body": [
-            "export function ${1/([a-z]*)_+([a-z]*)/${1:/downcase}${2:/capitalize}/g}() {",
+            "export function ${1/([a-z]*)_+([a-z]*)/${1:/downcase}${2:/capitalize}/g}(${3:payload}) {",
             "\treturn {",
-            "\t\ttype: ${1/(.*)/${1:/upcase}/}",
+            "\t\t${3/[\\,]+[\\s]/,\n\t\t/}",
+            "\t\ttype: ${1/(.*)/${1:/upcase}/},",
             "\t};",
             "};"
         ],
