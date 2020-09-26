@@ -18,4 +18,37 @@
         ],
         "description": "creates new action"
     },
+    "saga": {
+        "prefix": "saga",
+        "body": [
+            "export function* ${1:func}() {",
+            "\twhile (true) {",
+            "\t\tconst { ${2:payload}sga } = yield take(${3:ACTION});",
+            "\t\t$4",
+            "\t}",
+            "}"
+        ],
+        "description": "creates a new saga"
+    },
+    "sagaPut": {
+        "prefix": "yp",
+        "body": [
+            "yield put({ ${1:payload}, type: ${2:ACTION} });"
+        ],
+        "description": "yield put"
+    },
+    "sagaCall": {
+        "prefix": "yc",
+        "body": [
+            "yield call(() => ${1:func});"
+        ],
+        "description": "yield call"
+    },
+    "sagaConstCall": {
+        "prefix": "cyc",
+        "body": [
+            "const ${2:res} = yield call(() => ${1:func});"
+        ],
+        "description": "yield call"
+    },
 }
