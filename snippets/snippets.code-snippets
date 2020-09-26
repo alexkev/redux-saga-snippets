@@ -9,7 +9,7 @@
     "createNewAction": {
         "prefix": "reaction",
         "body": [
-            "export function ${1/([a-z]*)_+([a-z]*)/${1:/downcase}${2:/capitalize}/g}(${3:payload}) {",
+            "export function ${1/([a-z]*)_+([a-z]*)/${1:/downcase}${2:/capitalize}/g}(${3/(,)[^,]*$//}) {",
             "\treturn {",
             "\t\t${3/[\\,]+[\\s]/,\n\t\t/}",
             "\t\ttype: ${1/(.*)/${1:/upcase}/},",
