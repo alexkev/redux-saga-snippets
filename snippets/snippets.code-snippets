@@ -1,0 +1,20 @@
+{
+    "exportAction": {
+        "prefix": "exaction",
+        "body": [
+            "export const ${1/(.*)/${1:/upcase}/} = \"${1/(.*)/${1:/upcase}/}\";",
+        ],
+        "description": "export action"
+    },
+    "createNewAction": {
+        "prefix": "raction",
+        "body": [
+            "export function ${1/([a-z]*)_+([a-z]*)/${1:/downcase}${2:/capitalize}/g}() {",
+            "\treturn {",
+            "\t\ttype: ${1/(.*)/${1:/upcase}/}",
+            "\t};",
+            "};"
+        ],
+        "description": "creates new action"
+    },
+}
