@@ -23,7 +23,7 @@
         "body": [
             "export function* ${1:func}() {",
             "\twhile (true) {",
-            "\t\tconst { ${2:payload}sga } = yield take(${3:ACTION});",
+            "\t\tconst { ${2:payload} } = yield take(${3:ACTION});",
             "\t\t$4",
             "\t}",
             "}"
@@ -49,6 +49,20 @@
         "body": [
             "const ${2:res} = yield call(() => ${1:func});"
         ],
-        "description": "yield call"
+        "description": "const yield call"
+    },
+    "sagaSelect": {
+        "prefix": "cys",
+        "body": [
+            "const ${2:selector} = yield select((state) => state.${1:property});"
+        ],
+        "description": "const yield select"
+    },
+    "sagaTake": {
+        "prefix": "cyt",
+        "body": [
+            "const { ${2:payload} } = yield take(${3:ACTION});"
+        ],
+        "description": "const yield take"
     },
 }
